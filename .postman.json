@@ -1,0 +1,90 @@
+{
+  "workspace": {
+    "name": "Backend API Testing",
+    "description": "Testing workspace for Java Spring Boot backend APIs"
+  },
+  "collection": {
+    "name": "Backend API Collection",
+    "description": "Complete test suite for all backend endpoints"
+  },
+  "environment": {
+    "name": "Local Development",
+    "variables": [
+      {
+        "key": "base_url",
+        "value": "http://localhost:8083",
+        "description": "Base URL for the backend API"
+      },
+      {
+        "key": "test_email",
+        "value": "test@example.com",
+        "description": "Test email for user operations"
+      },
+      {
+        "key": "test_number",
+        "value": "1234567890",
+        "description": "Test phone number for user operations"
+      }
+    ]
+  },
+  "endpoints": {
+    "users": {
+      "base": "/api/users",
+      "endpoints": [
+        "POST /create",
+        "GET /check",
+        "GET /all",
+        "GET /getbynumber/{number}",
+        "PUT /update/{oldNumber}",
+        "DELETE /delete/{number}"
+      ]
+    },
+    "googleinfo": {
+      "base": "/api/googleinfo",
+      "endpoints": [
+        "POST /",
+        "GET /{googleId}",
+        "GET /email/{email}",
+        "GET /",
+        "DELETE /{googleId}"
+      ]
+    },
+    "links": {
+      "base": "/api/links",
+      "endpoints": [
+        "POST /create",
+        "GET /getby/{linknumber}",
+        "GET /all",
+        "PUT /update/{linknumber}",
+        "DELETE /delete/{linknumber}"
+      ]
+    },
+    "cricklinks": {
+      "base": "/api/cricklinks",
+      "endpoints": [
+        "POST /",
+        "GET /",
+        "GET /{id}",
+        "GET /customer/{customerId}",
+        "PUT /{id}",
+        "DELETE /{id}",
+        "DELETE /customer/{customerId}",
+        "GET /search"
+      ]
+    },
+    "admin": {
+      "base": "/api/Adminaprovel",
+      "endpoints": [
+        "POST /register",
+        "POST /login",
+        "GET /pending",
+        "GET /all",
+        "PUT /approve/{id}",
+        "PUT /reject/{id}",
+        "GET /get/{customerId}",
+        "PUT /update/{customerId}",
+        "DELETE /delete/{customerId}"
+      ]
+    }
+  }
+}
